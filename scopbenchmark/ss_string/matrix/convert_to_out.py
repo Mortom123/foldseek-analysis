@@ -35,8 +35,8 @@ letters, weights = parse_mat(mat_path)
 weights = np.stack(weights)
 missing_letters = [l for l in all_letters if l not in letters]
 
-extend_right = np.zeros((weights.shape[0], len(missing_letters)), dtype=int)
-extend_bottom = np.zeros((len(missing_letters),len(all_letters)), dtype=int)
+extend_right = np.ones((weights.shape[0], len(missing_letters)), dtype=int) * -1
+extend_bottom = np.ones((len(missing_letters),len(all_letters)), dtype=int) * -1
 
 new_weights = np.hstack([weights, extend_right])
 new_weights = np.vstack([new_weights, extend_bottom])
