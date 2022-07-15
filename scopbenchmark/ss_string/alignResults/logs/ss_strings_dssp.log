@@ -1,0 +1,217 @@
+easy-search ss_strings_dssp.fasta ss_strings_dssp.fasta ./alignResults/rawoutput/ss_strings_dssp.m8 tmp -a --threads 32 -s 7.5 -e 10000 --max-seqs 2000 --sub-mat SSAlign_large_negative.out --seed-sub-mat SSAlign_large_negative.out 
+
+MMseqs Version:                        	407b315e7edcbc9eb73527b904172e603095494e
+Substitution matrix                    	aa:SSAlign_large_negative.out,nucl:SSAlign_large_negative.out
+Add backtrace                          	true
+Alignment mode                         	3
+Alignment mode                         	0
+Allow wrapped scoring                  	false
+E-value threshold                      	10000
+Seq. id. threshold                     	0
+Min alignment length                   	0
+Seq. id. mode                          	0
+Alternative alignments                 	0
+Coverage threshold                     	0
+Coverage mode                          	0
+Max sequence length                    	65535
+Compositional bias                     	1
+Compositional bias                     	1
+Max reject                             	2147483647
+Max accept                             	2147483647
+Include identical seq. id.             	false
+Preload mode                           	0
+Pseudo count a                         	substitution:1.100,context:1.400
+Pseudo count b                         	substitution:4.100,context:5.800
+Score bias                             	0
+Realign hits                           	false
+Realign score bias                     	-0.2
+Realign max seqs                       	2147483647
+Correlation score weight               	0
+Gap open cost                          	aa:11,nucl:5
+Gap extension cost                     	aa:1,nucl:2
+Zdrop                                  	40
+Threads                                	32
+Compressed                             	0
+Verbosity                              	3
+Seed substitution matrix               	aa:SSAlign_large_negative.out,nucl:SSAlign_large_negative.out
+Sensitivity                            	7.5
+k-mer length                           	0
+k-score                                	seq:2147483647,prof:2147483647
+Alphabet size                          	aa:21,nucl:5
+Max results per query                  	2000
+Split database                         	0
+Split mode                             	2
+Split memory limit                     	0
+Diagonal scoring                       	true
+Exact k-mer matching                   	0
+Mask residues                          	1
+Mask residues probability              	0.9
+Mask lower case residues               	0
+Minimum diagonal score                 	15
+Spaced k-mers                          	1
+Spaced k-mer pattern                   	
+Local temporary path                   	
+Rescore mode                           	0
+Remove hits by seq. id. and coverage   	false
+Sort results                           	0
+Mask profile                           	1
+Profile E-value threshold              	0.001
+Global sequence weighting              	false
+Allow deletions                        	false
+Filter MSA                             	1
+Use filter only at N seqs              	0
+Maximum seq. id. threshold             	0.9
+Minimum seq. id.                       	0.0
+Minimum score per column               	-20
+Minimum coverage                       	0
+Select N most diverse seqs             	1000
+Pseudo count mode                      	0
+Gap pseudo count                       	10
+Min codons in orf                      	30
+Max codons in length                   	32734
+Max orf gaps                           	2147483647
+Contig start mode                      	2
+Contig end mode                        	2
+Orf start mode                         	1
+Forward frames                         	1,2,3
+Reverse frames                         	1,2,3
+Translation table                      	1
+Translate orf                          	0
+Use all table starts                   	false
+Offset of numeric ids                  	0
+Create lookup                          	0
+Add orf stop                           	false
+Overlap between sequences              	0
+Sequence split mode                    	1
+Header split mode                      	0
+Chain overlapping alignments           	0
+Merge query                            	1
+Search type                            	0
+Search iterations                      	1
+Start sensitivity                      	4
+Search steps                           	1
+Exhaustive search mode                 	false
+Filter results during exhaustive search	0
+Strand selection                       	1
+LCA search mode                        	false
+Disk space limit                       	0
+MPI runner                             	
+Force restart with latest tmp          	false
+Remove temporary files                 	true
+Alignment format                       	0
+Format alignment output                	query,target,fident,alnlen,mismatch,gapopen,qstart,qend,tstart,tend,evalue,bits
+Database output                        	false
+Overlap threshold                      	0
+Database type                          	0
+Shuffle input database                 	true
+Createdb mode                          	0
+Write lookup file                      	0
+Greedy best hits                       	false
+
+createdb ss_strings_dssp.fasta tmp/17822570893760845754/query --dbtype 0 --shuffle 1 --createdb-mode 0 --write-lookup 0 --id-offset 0 --compressed 0 -v 3 
+
+Converting sequences
+[=
+Time for merging to query_h: 0h 0m 0s 94ms
+Time for merging to query: 0h 0m 0s 113ms
+Database type: Aminoacid
+Time for processing: 0h 0m 0s 545ms
+createdb ss_strings_dssp.fasta tmp/17822570893760845754/target --dbtype 0 --shuffle 1 --createdb-mode 0 --write-lookup 0 --id-offset 0 --compressed 0 -v 3 
+
+Converting sequences
+[=
+Time for merging to target_h: 0h 0m 0s 89ms
+Time for merging to target: 0h 0m 0s 118ms
+Database type: Aminoacid
+Time for processing: 0h 0m 0s 568ms
+Create directory tmp/17822570893760845754/search_tmp
+search tmp/17822570893760845754/query tmp/17822570893760845754/target tmp/17822570893760845754/result tmp/17822570893760845754/search_tmp --sub-mat aa:SSAlign_large_negative.out,nucl:SSAlign_large_negative.out -a 1 --alignment-mode 3 -e 10000 --threads 32 --seed-sub-mat aa:SSAlign_large_negative.out,nucl:SSAlign_large_negative.out -s 7.5 --max-seqs 2000 --remove-tmp-files 1 
+
+prefilter tmp/17822570893760845754/query tmp/17822570893760845754/target tmp/17822570893760845754/search_tmp/9166604118880789104/pref_0 --sub-mat aa:SSAlign_large_negative.out,nucl:SSAlign_large_negative.out --seed-sub-mat aa:SSAlign_large_negative.out,nucl:SSAlign_large_negative.out -k 0 --k-score seq:2147483647,prof:2147483647 --alph-size aa:21,nucl:5 --max-seq-len 65535 --max-seqs 2000 --split 0 --split-mode 2 --split-memory-limit 0 -c 0 --cov-mode 0 --comp-bias-corr 1 --comp-bias-corr-scale 1 --diag-score 1 --exact-kmer-matching 0 --mask 1 --mask-prob 0.9 --mask-lower-case 0 --min-ungapped-score 15 --add-self-matches 0 --spaced-kmer-mode 1 --db-load-mode 0 --pca substitution:1.100,context:1.400 --pcb substitution:4.100,context:5.800 --threads 32 --compressed 0 -v 3 -s 7.5 
+
+Query database size: 11211 type: Aminoacid
+Estimated memory consumption: 3G
+Target database size: 11211 type: Aminoacid
+Index table k-mer threshold: 96 at k-mer size 6 
+Index table: counting k-mers
+Truncating substitution matrix diagonal score![=================================================================] 11.21K 0s 28ms
+Index table: Masked residues: 1425935
+Index table: fill
+[=================================================================] 11.21K 0s 5ms
+Index statistics
+Entries:          69177
+DB size:          1863 MB
+Avg k-mer size:   0.000283
+Top 10 k-mers
+    EELTEE	104
+    DLTLLL	97
+    LLTLLL	88
+    TTLETT	78
+    TTLLTT	78
+    LSEETT	75
+    TTLLSL	69
+    LLTLSL	66
+    TTLELS	63
+    EELTTT	61
+Time for index table init: 0h 0m 2s 408ms
+Process prefiltering step 1 of 1
+
+k-mer similarity threshold: 96
+Starting prefiltering scores calculation (step 1 of 1)
+Query db start 1 to 11211
+Target db start 1 to 11211
+[=================================================================] 11.21K 0s 528ms
+
+73.911062 k-mers per position
+8056 DB matches per sequence
+0 overflows
+0 queries produce too many hits (truncated result)
+501 sequences passed prefiltering per query sequence
+399 median result list length
+330 sequences with 0 size result lists
+Time for merging to pref_0: 0h 0m 0s 87ms
+Time for processing: 0h 0m 4s 712ms
+align tmp/17822570893760845754/query tmp/17822570893760845754/target tmp/17822570893760845754/search_tmp/9166604118880789104/pref_0 tmp/17822570893760845754/result --sub-mat aa:SSAlign_large_negative.out,nucl:SSAlign_large_negative.out -a 1 --alignment-mode 3 --alignment-output-mode 0 --wrapped-scoring 0 -e 10000 --min-seq-id 0 --min-aln-len 0 --seq-id-mode 0 --alt-ali 0 -c 0 --cov-mode 0 --max-seq-len 65535 --comp-bias-corr 1 --comp-bias-corr-scale 1 --max-rejected 2147483647 --max-accept 2147483647 --add-self-matches 0 --db-load-mode 0 --pca substitution:1.100,context:1.400 --pcb substitution:4.100,context:5.800 --score-bias 0 --realign 0 --realign-score-bias -0.2 --realign-max-seqs 2147483647 --corr-score-weight 0 --gap-open aa:11,nucl:5 --gap-extend aa:1,nucl:2 --zdrop 40 --threads 32 --compressed 0 -v 3 
+
+Compute score, coverage and sequence identity
+Query database size: 11211 type: Aminoacid
+Target database size: 11211 type: Aminoacid
+Calculation of alignments
+[=================================================================] 11.21K 1m 47s 556ms
+Time for merging to result: 0h 0m 0s 83ms
+5624755 alignments calculated
+5624746 sequence pairs passed the thresholds (0.999998 of overall calculated)
+501.716705 hits per query sequence
+Time for processing: 0h 1m 54s 741ms
+rmdb tmp/17822570893760845754/search_tmp/9166604118880789104/pref_0 -v 3 
+
+Time for processing: 0h 0m 0s 43ms
+rmdb tmp/17822570893760845754/search_tmp/9166604118880789104/aln_0 -v 3 
+
+Time for processing: 0h 0m 0s 1ms
+rmdb tmp/17822570893760845754/search_tmp/9166604118880789104/input_0 -v 3 
+
+Time for processing: 0h 0m 0s 1ms
+rmdb tmp/17822570893760845754/search_tmp/9166604118880789104/aln_merge -v 3 
+
+Time for processing: 0h 0m 0s 1ms
+convertalis tmp/17822570893760845754/query tmp/17822570893760845754/target tmp/17822570893760845754/result ./alignResults/rawoutput/ss_strings_dssp.m8 --sub-mat aa:SSAlign_large_negative.out,nucl:SSAlign_large_negative.out --format-mode 0 --format-output query,target,fident,alnlen,mismatch,gapopen,qstart,qend,tstart,tend,evalue,bits --translation-table 1 --gap-open aa:11,nucl:5 --gap-extend aa:1,nucl:2 --db-output 0 --db-load-mode 0 --search-type 0 --threads 32 --compressed 0 -v 3 
+
+[=================================================================] 11.21K 0s 883ms
+Time for merging to ss_strings_dssp.m8: 0h 0m 3s 106ms
+Time for processing: 0h 0m 7s 291ms
+rmdb tmp/17822570893760845754/result -v 3 
+
+Time for processing: 0h 0m 0s 135ms
+rmdb tmp/17822570893760845754/target -v 3 
+
+Time for processing: 0h 0m 0s 3ms
+rmdb tmp/17822570893760845754/target_h -v 3 
+
+Time for processing: 0h 0m 0s 3ms
+rmdb tmp/17822570893760845754/query -v 3 
+
+Time for processing: 0h 0m 0s 11ms
+rmdb tmp/17822570893760845754/query_h -v 3 
+
+Time for processing: 0h 0m 0s 10ms
