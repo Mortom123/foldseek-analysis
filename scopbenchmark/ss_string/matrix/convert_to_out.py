@@ -1,5 +1,7 @@
 import sys
 import numpy as np
+import pathlib
+
 all_letters = "A	B	C	D	E	F	G	H	I	J	K	L	M	N	O	P	Q	R	S	T	U	V	W	X	Y	Z".split("\t")
 
 def write_mat(path, names, mat):
@@ -33,11 +35,14 @@ letters, weights = parse_mat(mat_path)
 weights = np.stack(weights)
 missing_letters = [l for l in all_letters if l not in letters]
 
-extend_right = np.ones((weights.shape[0], len(missing_letters)), dtype=int)
-extend_bottom = np.ones((len(missing_letters),len(all_letters)), dtype=int)
+extend_right = np.zeros((weights.shape[0], len(missing_letters)), dtype=int)
+extend_bottom = np.zeros((len(missing_letters),len(all_letters)), dtype=int)
 
-weights = np.hstack([weights, extend_right])
-weights = np.vstack([weights, extend_bottom])
+new_weights = np.hstack([weights, extend_right])
+new_weights = np.vstack([new_weights, extend_bottom])
+
+for i in range(len(letters), len(all_letters)):
+    new_weights[i,i] = 1
 
 new_letters = letters + missing_letters
-write_mat("test.out", new_letters, weights)
+write_mat(pathlib.Path(sys.argv[1]).with_suffix(".out"), new_letters, new_weights)
